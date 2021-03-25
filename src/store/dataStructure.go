@@ -8,13 +8,17 @@ type (
 	}
 
 	TProduk struct {
-		ID          uint      `json:"id" gorm:"primaryKey"`
-		Title       string    `json:"title"`
-		Description string    `json:"description"`
-		Rating      int       `json:"rating"`
-		Image       string    `json:"image"`
-		CreatedAt   time.Time `json:"created_at" gorm:"autoCreateTime"`
-		UpdatedAt   time.Time `json:"updated_at" gorm:"autoUpdateTime"`
+		ID          uint      `groups:"id" json:"id" gorm:"primaryKey"`
+		Title       string    `groups:"title" json:"title"`
+		Description string    `groups:"description" json:"description"`
+		Rating      int       `groups:"rating" json:"rating"`
+		Image       string    `groups:"image" json:"image"`
+		CreatedAt   time.Time `groups:"create" json:"created_at" gorm:"autoCreateTime"`
+		UpdatedAt   time.Time `groups:"update" json:"updated_at" gorm:"autoUpdateTime"`
+	}
+
+	AuthParams struct {
+		Phone string `json:"phone"`
 	}
 )
 
