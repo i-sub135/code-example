@@ -8,6 +8,6 @@ WORKDIR /app
 COPY . .
 
 RUN go mod download
-RUN make start
+RUN make build
 
 EXPOSE 6100
