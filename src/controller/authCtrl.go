@@ -56,7 +56,10 @@ func (r *RestController) AuthValidateCtrl(res *gin.Context) {
 			return
 		}
 
-		out := respon.RespOK(param)
+		token, _ := adons.CreateJwt(param.Phone)
+		out := respon.RespOK(map[string]string{
+			"token": token,
+		})
 		res.JSON(out.Code, out)
 
 	}

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"code-example/src/middleware"
 	"code-example/src/routers"
 	"os"
 
@@ -20,21 +21,24 @@ func main() {
 
 	var (
 		// setup routes
-		route = gin.Default()
-		auth  = route.Group("/auth")
-		// film  = route.Group("/film")
+		route  = gin.Default()
+		auth   = route.Group("/auth")
+		produk = route.Group("/products")
 
 		// initial package used
-		app routers.RestRouter
-		// midle middleware.RestMiddleware
+		app    routers.RestRouter
+		middle middleware.RestMiddleware
 	)
 
-	// film.Use(midle.ReqValidator)
+	//used middleware
+	produk.Use(
+		middle.ReqValidator,
+	)
 
 	// used routes
 	app.IndexRoute(route)
 	app.AuthRoute(auth)
-	// app.FilmRoute(film)
+	app.ProdukRoute(produk)
 
 	_ = route.Run()
 }

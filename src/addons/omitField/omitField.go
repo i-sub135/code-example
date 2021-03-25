@@ -13,7 +13,7 @@ var (
 	tagName = "groups"
 )
 
-func (r *OmitFields) HiddeFieleds(obj interface{}, acTags []string) {
+func (r *OmitFields) ShowFieleds(obj interface{}, acTags []string) {
 	sv := reflect.ValueOf(obj).Elem()
 	st := sv.Type()
 	if sv.Kind() == reflect.Struct {
