@@ -12,5 +12,5 @@ Example Code With golang use Gin-Gonic & Gorm
 # How to run
 
     - make dbmigrate [create database with models]
-    - 
+    - make start or go go run src/*.go for running project
     - 
