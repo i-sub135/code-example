@@ -9,5 +9,6 @@ COPY . .
 
 RUN go mod download
 RUN make build
+CMD ./main
 
 EXPOSE 6100
