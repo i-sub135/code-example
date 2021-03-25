@@ -46,7 +46,7 @@ func (r *RestController) AuthValidateCtrl(res *gin.Context) {
 		key := fmt.Sprintf("OTP-%v", param.Phone)
 		getOTP, err := model.GetOtp(key)
 		if err != nil {
-			out := respon.RespBad(1, "akses notfound", map[string]string{})
+			out := respon.RespBad(1, "akses notfound request to endpoint /auth", map[string]string{})
 			res.JSON(out.Code, out)
 			return
 		}

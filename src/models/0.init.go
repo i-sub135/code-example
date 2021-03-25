@@ -7,7 +7,8 @@ type (
 )
 
 var (
-	connect    db.RestDB
-	sql        = connect.Sql()
-	redisClien = connect.RedisConnect()
+	connect      db.RestDB
+	sql          = connect.Sql()
+	redisClien   = connect.RedisConnect(0)
+	redisClient1 = connect.RedisConnect(1)
 )
