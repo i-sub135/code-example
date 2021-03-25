@@ -27,7 +27,7 @@ func init() {
 	connect = os.Getenv("CONNECT")
 }
 
-func (d *RestDB) Sql() (con *gorm.DB) {
+func (r *RestDB) Sql() (con *gorm.DB) {
 	db, err = gorm.Open(mysql.Open(connect), &gorm.Config{})
 
 	if err != nil {

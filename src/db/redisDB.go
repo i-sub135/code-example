@@ -10,11 +10,11 @@ import (
 func (r *RestDB) RedisConnect() *redis.Client {
 	redisHost := os.Getenv("REDIS_HOST")
 	redisPass := os.Getenv("REDIS_PASS")
-	clien := redis.NewClient(&redis.Options{
+	client := redis.NewClient(&redis.Options{
 		Addr:     redisHost,
 		Password: redisPass, // no password set
 		DB:       0,         // use default DB
 	})
 
-	return clien
+	return client
 }

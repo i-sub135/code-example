@@ -8,4 +8,5 @@ func (r *RestRouter) IndexRoute(eng *gin.Engine) {
 
 func (r *RestRouter) AuthRoute(g *gin.RouterGroup) {
 	g.POST("", Ctrl.AuthReqCodeCtrl)
+	g.POST("/validate", Ctrl.AuthValidateCtrl)
 }

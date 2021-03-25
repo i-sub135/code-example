@@ -19,6 +19,7 @@ type (
 
 	AuthParams struct {
 		Phone string `json:"phone"`
+		Otp   string `json:"otp"`
 	}
 )
 

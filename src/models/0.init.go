@@ -1,5 +1,13 @@
 package models
 
+import "code-example/src/db"
+
 type (
-	RestModel struct{}
+	RestModels struct{}
+)
+
+var (
+	connect    db.RestDB
+	sql        = connect.Sql()
+	redisClien = connect.RedisConnect()
 )
